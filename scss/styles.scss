@@ -1,0 +1,181 @@
+@import "variables";
+@import "mixins";
+
+html {
+  height: 100%;
+  font-family: Arvo, sans-serif;
+  font-size: $font_size_basic;
+}
+body {
+  background-color: $primal_color;
+  color: $font_color_main;
+}
+
+h2, h3 {
+  color: $font_color_accent_second;
+}
+h1 {
+  font-size: $title_size_t1;
+}
+h2 {
+  font-size: $title_size_t2;
+}
+h3 {
+  font-size: $title_size_t3;
+}
+a {
+  color: $accent_first;
+  text-decoration: none;
+
+  &:hover{
+    text-decoration: underline;
+  }
+}
+p {
+  text-align: justify;
+  line-height: 1.8;
+}
+ul{
+  list-style: none;
+}
+
+.accent {
+  color: $accent_first;
+}
+
+.mainNav {
+  background-color: $accent_second;
+
+  ul {
+    @include block;
+    padding: $margin_padding_small 0;
+  }
+  li {
+    display: inline-block;
+    padding: 0 $margin_padding_small;
+    border-right: 1px solid $secondary_color;
+  }
+
+  .button {
+    @include button($accent_second, $font_color_bright, $title_size_t4);
+  }
+
+  .active, a:hover{
+    @include active;
+  }
+}
+
+.mainHeader {
+  @include block;
+
+  h1 {
+    font-weight: normal;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  h2 {
+    font-size: $title_size_t4;
+    margin-bottom: $margin_padding_very_big;
+  }
+  img {
+    width: 100%;
+    border-radius: 15px;
+  }
+
+}
+
+.mainContentContainer {
+  @include block;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding-bottom: $margin_padding_max;
+  padding-top: $margin_padding_big;
+}
+
+.content {
+  flex: 0 0 66%;
+  order: 2;
+
+  .contentPiece{
+    @include pannel;
+    margin-bottom: $margin_padding_normal;
+
+    h2 {
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    .stamp {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      padding-top: $margin_padding_small;
+      padding-bottom: $margin_padding_small;
+    }
+
+    .button {
+      @include button($accent_second, $accent_first, $font_size_basic);
+      margin: $margin_padding_big $margin_padding_big $margin_padding_max 0;
+      padding-top: 0.8em;
+      padding-bottom: 0.8em;
+
+      &:hover {
+        @include active;
+      }
+    }
+  }
+}
+.sidebar {
+  @include pannel;
+  flex: 0 0 28%;
+  order: 1;
+  margin-right: auto;
+  padding-bottom: 4.5em;
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    padding-bottom: $margin_padding_small;
+    padding-top: $margin_padding_small;
+    border-bottom: 1px solid $secondary_color_dark;
+  }
+
+  a {
+    color: $font_color_main;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    min-height: $margin_padding_max;
+    border-radius: 10px;
+    border: $border_style;
+    outline: none;
+    background-color: $secondary_color;
+
+    &:focus {
+      background-color: $primal_color;
+    }
+  }
+}
+
+.mainFooter {
+  background-color: $secondary_color;
+  box-shadow: inset 0 6px 2px $shadow_color;
+  padding-top: $margin_padding_normal;
+  padding-bottom: $margin_padding_big;
+  text-align: center;
+  color: $font_color_soft;
+  font-size: $font_size_big;
+
+
+  p {
+    @include block;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+}

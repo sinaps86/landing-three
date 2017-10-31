@@ -1,0 +1,29 @@
+@mixin block{
+  width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin button($colorBG, $colorFont, $sizeFont){
+  padding: 0.6em 1.8em;
+  border-radius: 5px;
+  background-color: $colorBG;
+  color: $colorFont;
+  font-size: $sizeFont;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+
+@mixin active {
+  background-color: $accent_first;
+  color: $accent_second;
+  font-weight: normal;
+}
+
+@mixin pannel{
+  border-radius: 12px;
+  background-color: $secondary_color;
+  border: 1px solid $secondary_color_dark;
+  padding: $margin_padding_very_big $margin_padding_very_big
+}
